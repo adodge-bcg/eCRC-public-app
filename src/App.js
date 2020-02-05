@@ -11,7 +11,6 @@ function App() {
   return (
     <div className="App">
       <Header name="eCRC" />
-      <Breadcrumbs />
       <Body />
 
       <Footer />

@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+if (true) {
+  axios.defaults.baseURL = "http://localhost:8080/ecrc";
+}
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

@@ -1,11 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 
 import './App.scss';
-import Header from './header/Header';
-import Breadcrumbs from './breadcrumbs/Breadcrumbs';
-import Body from './body/Body';
-import Footer from './footer/Footer';
+import Header from './components/header/Header';
+import Breadcrumbs from './components/breadcrumbs/Breadcrumbs';
+import Body from './components/body/Body';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (

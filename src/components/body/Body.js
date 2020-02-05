@@ -20,7 +20,6 @@ export default function Body(props) {
   return (
     <main className="main">
       <Menu menuItems={menuList} />
-      <p>This is the Body.</p>
       <Content />
     </main>
   )

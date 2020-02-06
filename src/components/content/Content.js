@@ -5,10 +5,16 @@ import './Content.scss';
 import Landing from './landing/Landing';
 import VerifiedOrg from './verifiedorg/VerifiedOrg';
 import UnverifiedOrg from './unverifiedorg/UnverifiedOrg';
+import TermsofService from './termsofservice/TermsofService';
+import ApplicationForm from './applicationform/AplicationForm';
+import ConsentForm from './consentform/ConsentForm';
 
 const LANDING = "LANDING";
 const VERIFIEDORG = "VERIFIEDORG";
 const UNVERIFIEDORG = "UNVERIFIEDORG";
+const TERMSOFSERVICE = "TERMSOFSERVICE";
+const APPLICATIONFORM = "APPLICATIONFORM";
+const CONSENTFORM = "CONSENTFORM";
 
 export default function Content(props) {
   const [mode, setMode] = useState(LANDING);
@@ -33,6 +39,9 @@ export default function Content(props) {
       {mode === LANDING && <Landing onValidate={validate} />}
       {mode === VERIFIEDORG && <VerifiedOrg />}
       {mode === UNVERIFIEDORG && <UnverifiedOrg />}
+      {mode === TERMSOFSERVICE && <TermsofService />}
+      {mode === APPLICATIONFORM && <ApplicationForm />}
+      {mode === CONSENTFORM && <ConsentForm />}
       <p>End of Content</p>
     </div>
   )

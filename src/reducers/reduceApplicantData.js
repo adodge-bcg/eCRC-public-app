@@ -4,6 +4,7 @@ export const SET_CONSENT = "SET_CONSENT";
 
 const reducerLookup = {
   SET_ORG: (state, action) => {
+    console.log(`Org id: ${action.value}`)
     return {
       ...state,
       org: action.value

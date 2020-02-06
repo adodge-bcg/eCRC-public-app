@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import axios from 'axios';
 
 import './Body.scss';
 import Menu from '../menu/Menu';
@@ -17,9 +18,10 @@ const menuList = [
 
 
 export default function Body(props) {
+
   return (
     <main className="main">
-      <Menu menuItems={menuList} />
+      <Menu />
       <Content />
     </main>
   )

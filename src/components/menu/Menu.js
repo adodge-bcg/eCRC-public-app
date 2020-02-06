@@ -1,15 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-import MenuItem from './MenuItem/MenuItem';
+import axios from 'axios';
+
+import MenuItem from './menuitem/MenuItem';
 
 export default function Menu(props) {
-  const menuList = props.menuItems.map((menuItem) => {
-    return <MenuItem url={menuItem.url} name={menuItem.name} />
-  });
+  const [menu, setMenu] = useState([]);
+
+  useEffect(() => {
+    axios.get("/links")
+    .then(res => {
+      console.log(res.data);
+  
+      const menuList = res.data.map((menuItem) => {
+        console.log(menuItem);
+        return <MenuItem url={menuItem.url} name={menuItem.name} />
+      });
+  
+      setMenu(menuList);
+    });
+
+  }, []);
+
 
   return (
     <div>
-      {menuList}
+      {menu}
     </div>
   )
-}
+};

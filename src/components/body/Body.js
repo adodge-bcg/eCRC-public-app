@@ -7,9 +7,9 @@ import Content from '../content/Content';
 export default function Body(props) {
 
   return (
-    <main className="main">
+    <div className="body-content">
       <Menu />
       <Content />
-    </main>
+    </div>
   )
 }

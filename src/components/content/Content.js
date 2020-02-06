@@ -36,7 +36,7 @@ export default function Content(props) {
     axios.get(`/validateorg?org=${orgId}`)
     .then(res => {
       if (res.data.bscsorg === '1') {
-        setOrg(orgId);
+        setOrg({orgId, name: "Some Org"});
         setMode(VERIFIEDORG);
       } else if (res.data.bscsorg === '0') {
         setMode(UNVERIFIEDORG);
@@ -46,7 +46,7 @@ export default function Content(props) {
     })
   }
 
-  const orgConfirmation = () => {
+  const confirmOrg = () => {
 
     //TODO: Keycloak to BCSC...and return...get applicant info from BCSC, save to state
     setApplicant(applicant);
@@ -56,16 +56,16 @@ export default function Content(props) {
   }
 
   return (
-    <div>
+    <main>
       <p>This is Content.</p>
       {mode === LANDING && <Landing onValidate={validateOrg} />}
-      {mode === VERIFIEDORG && <VerifiedOrg org={state.org} confirmOrg={orgConfirmation} />}
+      {mode === VERIFIEDORG && <VerifiedOrg org={state.org} confirmOrg={confirmOrg} />}
       {mode === UNVERIFIEDORG && <UnverifiedOrg />}
       {mode === TERMSOFSERVICE && <TermsofService />}
       {mode === CONSENTFORM && <ConsentForm />}
       {mode === APPLICATIONFORM && <ApplicationForm applicant={state.applicant} />}
       {mode === INFORMATIONREVIEW && <InformationReview />}
       <p>End of Content</p>
-    </div>
+    </main>
   )
 }

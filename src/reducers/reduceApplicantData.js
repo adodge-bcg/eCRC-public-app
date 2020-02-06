@@ -1,10 +1,16 @@
+export const SET_SESSION_ID = "SET_SESSION_ID";
 export const SET_ORG = "SET_ORG";
 export const SET_APPLICANT = "SET_APPLICANT";
 export const SET_CONSENT = "SET_CONSENT";
 
 const reducerLookup = {
+  SET_SESSION_ID: (state, action) => {
+    return {
+      ...state,
+      sessionId: action.value
+    };
+  },
   SET_ORG: (state, action) => {
-    console.log(`Org id: ${action.value}`)
     return {
       ...state,
       org: action.value

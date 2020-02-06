@@ -20,7 +20,7 @@ const CONSENTFORM = "CONSENTFORM";
 
 export default function Content(props) {
   const [mode, setMode] = useState(LANDING);
-  const {state, setOrg, setApplicant, setConsent} = useApplicantData();
+  const {state, setSessionId, setOrg, setApplicant, setConsent} = useApplicantData();
 
   const validate = (orgId) => {
     axios.get(`/validateorg?org=${orgId}`)
@@ -34,7 +34,6 @@ export default function Content(props) {
         //TODO: Set error for invalid org code
       }
     })
-
   }
 
   return (

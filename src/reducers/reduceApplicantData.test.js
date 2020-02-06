@@ -1,6 +1,7 @@
 import reducer, { SET_ORG, SET_APPLICANT, SET_CONSENT } from "./reduceApplicantData";
 
 let state = {
+  sessionId: 123,
   org: {
     name: "Default",
     type: "Default",
@@ -16,6 +17,7 @@ let state = {
 
 const resetState = () => {
   state = {
+    sessionId: 123,
     org: {
       name: "Default",
       type: "Default",
@@ -43,6 +45,7 @@ describe("User Data Reducer", () => {
   it("sets org with given data without changing rest of state", () => {
     const result = reducer(state, {type: SET_ORG, value: {name: "Some org", type: "Does a thing", id: 123}});
     expect(result).toEqual({
+      sessionId: 123,
       org: {
         name: "Some org",
         type: "Does a thing",
@@ -60,6 +63,7 @@ describe("User Data Reducer", () => {
   it("sets applicant with given data without changing rest of state", () => {
     const result = reducer(state, {type: SET_APPLICANT, value: {name: "Some person", dob: "10/12/1940", address: "432 Somewhere Nanaimo BC V9D 3E4"}});
     expect(result).toEqual({
+      sessionId: 123,
       org: {
         name: "Default",
         type: "Default",
@@ -77,6 +81,7 @@ describe("User Data Reducer", () => {
   it("sets consent with given consent without changing rest of state", () => {
     const result = reducer(state, {type: SET_CONSENT, value: true});
     expect(result).toEqual({
+      sessionId: 123,
       org: {
         name: "Default",
         type: "Default",
